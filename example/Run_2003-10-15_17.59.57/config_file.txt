@@ -1,0 +1,210 @@
+Time 7.5775000000327
+kTorsoPosition 0.447038812021003 0.547865221150985 -0.54786522115103 0.44703881202102
+0 0 0.805850138381386
+
+kTorsoVelocity 0 1.6771523807912 0
+0.759918086189407 0 -0.139313161159941
+
+kLeftThighMDHTheta 0.621988775117701
+kLeftThighInitialJointVelocity 1.05424642671177
+kRightThighMDHTheta -0.194831746654149
+kRightThighInitialJointVelocity 0.626442941918555
+kLeftLegMDHTheta 0.00378877996299739
+kLeftLegInitialJointVelocity 0.0637324840231103
+kRightLegMDHTheta 0.00961154524025464
+kRightLegInitialJointVelocity 0.209205536561334
+kLeftFootMDHTheta 0.565233185583966
+kLeftFootInitialJointVelocity -2.78671658522131
+kRightFootMDHTheta 0.425343705894657
+kRightFootInitialJointVelocity 0.157312856503071
+
+
+
+kIntegrationStepsize 2.000000000000000164e-05 
+kGravityVector 0 0 -9.810000000000000497 
+kGroundPlanarSpringConstant 20000 
+kGroundNormalSpringConstant 20000 
+kGroundPlanarDamperConstant 200 
+kGroundNormalDamperConstant 200 
+kGroundStaticFrictionCoeff 1000 
+kGroundKineticFrictionCoeff 800 
+kDefaultJointLimitSpringConstant 1000 
+kDefaultJointLimitDamperConstant 100 
+kDefaultJointFriction 0.01000000000000000021 
+kDefaultMuscleActivationK 0.1700000000000000122 
+kDefaultMuscleForcePerUnitArea 200000 
+kDefaultMuscleVMaxFactor 6 
+kBMR 0 
+kTorsoPartName "Torso" 
+kTorsoGraphicFile "bones/unit/pelvis.obj" 0.4844999999999999862 
+kTorsoMass 39 
+kTorsoMOI 0.3400000000000000244 0 0 0 6 0 0 0 5.839999999999999858 
+kTorsoCG -0.3280000000000000138 0 0 
+kTorsoPosition 0.5 0.5 -0.5 0.5 5 5 0.8699999999999999956 
+kTorsoVelocity 0 0 0 0 0 0 
+kTorsoVelocityRange -10 10 -10 10 -10 10 
+kTorsoPositionRange -0.5 100 -0.1000000000000000056 0.1000000000000000056 0.5 2.5 
+kLeftThighPartName "LeftThigh" 
+kLeftThighGraphicFile "bones/unit/left_femur.obj" 0.3960000000000000187 
+kLeftThighMass 10.35999999999999943 
+kLeftThighMOI 0.04100000000000000172 0 0 0 0.5400000000000000355 0 0 0 0.5400000000000000355 
+kLeftThighCG 0.1799999999999999933 0 0 
+kLeftThighMDHA 0 
+kLeftThighMDHAlpha 0 
+kLeftThighMDHD 0 
+kLeftThighMDHTheta 0 
+kLeftThighInitialJointVelocity 0 
+kLeftThighJointMin -0.1749999999999999889 
+kLeftThighJointMax 2.089999999999999858 
+kLeftThighJointLimitSpringConstant -1 
+kLeftThighJointLimitDamperConstant -1 
+kLeftThighJointFriction -1 
+kRightThighPartName "RightThigh" 
+kRightThighGraphicFile "bones/unit/right_femur.obj" 0.3960000000000000187 
+kRightThighMass 10.35999999999999943 
+kRightThighMOI 0.04100000000000000172 0 0 0 0.5400000000000000355 0 0 0 0.5400000000000000355 
+kRightThighCG 0.1799999999999999933 0 0 
+kRightThighMDHA 0 
+kRightThighMDHAlpha 0 
+kRightThighMDHD 0 
+kRightThighMDHTheta 0 
+kRightThighInitialJointVelocity 0 
+kRightThighJointMin -0.1749999999999999889 
+kRightThighJointMax 2.089999999999999858 
+kRightThighJointLimitSpringConstant -1 
+kRightThighJointLimitDamperConstant -1 
+kRightThighJointFriction -1 
+kLeftLegPartName "LeftLeg" 
+kLeftLegGraphicFile "bones/unit/left_tib_fib.obj" 0.4299999999999999933 
+kLeftLegMass 3.160000000000000142 
+kLeftLegMOI 0.006000000000000000125 0 0 0 0.1300000000000000044 0 0 0 0.1300000000000000044 
+kLeftLegCG 0.173999999999999988 0 0 
+kLeftLegMDHA 0.3960000000000000187 
+kLeftLegMDHAlpha 0 
+kLeftLegMDHD 0 
+kLeftLegMDHTheta 0 
+kLeftLegInitialJointVelocity 0 
+kLeftLegJointMin -1.570000000000000062 
+kLeftLegJointMax 0 
+kLeftLegJointLimitSpringConstant -1 
+kLeftLegJointLimitDamperConstant -1 
+kLeftLegJointFriction -1 
+kRightLegPartName "RightLeg" 
+kRightLegGraphicFile "bones/unit/right_tib_fib.obj" 0.4299999999999999933 
+kRightLegMass 3.160000000000000142 
+kRightLegMOI 0.006000000000000000125 0 0 0 0.1300000000000000044 0 0 0 0.1300000000000000044 
+kRightLegCG 0.173999999999999988 0 0 
+kRightLegMDHA 0.3960000000000000187 
+kRightLegMDHAlpha 0 
+kRightLegMDHD 0 
+kRightLegMDHTheta 0 
+kRightLegInitialJointVelocity 0 
+kRightLegJointMin -1.570000000000000062 
+kRightLegJointMax 0 
+kRightLegJointLimitSpringConstant -1 
+kRightLegJointLimitDamperConstant -1 
+kRightLegJointFriction -1 
+kLeftFootPartName "LeftFoot" 
+kLeftFootGraphicFile "bones/unit/left_foot.obj" 0.1499999999999999944 
+kLeftFootMass 1 
+kLeftFootMOI 0.01799999999999999864 0 0 0 0.001000000000000000021 0 0 0 0.01799999999999999864 
+kLeftFootCG 0 0.1160000000000000059 0 
+kLeftFootMDHA 0.4299999999999999933 
+kLeftFootMDHAlpha 0 
+kLeftFootMDHD 0 
+kLeftFootMDHTheta 0 
+kLeftFootInitialJointVelocity 0 
+kLeftFootJointMin -1.046999999999999931 
+kLeftFootJointMax 0.5759999999999999565 
+kLeftFootJointLimitSpringConstant -1 
+kLeftFootJointLimitDamperConstant -1 
+kLeftFootJointFriction -1 
+kRightFootPartName "RightFoot" 
+kRightFootGraphicFile "bones/unit/right_foot.obj" 0.1499999999999999944 
+kRightFootMass 1 
+kRightFootMOI 0.01799999999999999864 0 0 0 0.001000000000000000021 0 0 0 0.01799999999999999864 
+kRightFootCG 0 0.1160000000000000059 0 
+kRightFootMDHA 0.4299999999999999933 
+kRightFootMDHAlpha 0 
+kRightFootMDHD 0 
+kRightFootMDHTheta 0 
+kRightFootInitialJointVelocity 0 
+kRightFootJointMin -1.046999999999999931 
+kRightFootJointMax 0.5759999999999999565 
+kRightFootJointLimitSpringConstant -1 
+kRightFootJointLimitDamperConstant -1 
+kRightFootJointFriction -1 
+kLeftHipExtensorName "LeftHipExtensor" 
+kLeftHipExtensorOrigin 0.05199999999999999761 -0.07599999999999999811 0 
+kLeftHipExtensorInsertion 0.2999999999999999889 0.005000000000000000104 0 
+kLeftHipExtensorPCA 0.01400000000000000029 
+kLeftHipExtensorLength 0.2600000000000000089 
+kLeftHipFlexorName "LeftHipFlexor" 
+kLeftHipFlexorOrigin -0.08100000000000000255 0.07099999999999999367 0 
+kLeftHipFlexorInsertion 0.1600000000000000033 0.02900000000000000147 0 
+kLeftHipFlexorPCA 0.007000000000000000146 
+kLeftHipFlexorLength 0.2399999999999999911 
+kRightHipExtensorName "RightHipExtensor" 
+kRightHipExtensorOrigin 0.05199999999999999761 -0.07599999999999999811 0 
+kRightHipExtensorInsertion 0.2999999999999999889 0.005000000000000000104 0 
+kRightHipExtensorPCA 0.01400000000000000029 
+kRightHipExtensorLength 0.2600000000000000089 
+kRightHipFlexorName "RightHipFlexor" 
+kRightHipFlexorOrigin -0.08100000000000000255 0.07099999999999999367 0 
+kRightHipFlexorInsertion 0.1600000000000000033 0.02900000000000000147 0 
+kRightHipFlexorPCA 0.007000000000000000146 
+kRightHipFlexorLength 0.2399999999999999911 
+kLeftKneeExtensorName "LeftKneeExtensor" 
+kLeftKneeExtensorOrigin 0.25 0.02900000000000000147 0 
+kLeftKneeExtensorMidPoint 0.4299999999999999933 0.05999999999999999778 0 
+kLeftKneeExtensorInsertion 0.07599999999999999811 0.04299999999999999656 0 
+kLeftKneeExtensorPCA 0.0240000000000000005 
+kLeftKneeExtensorLength 0.23000000000000001 
+kLeftKneeFlexorName "LeftKneeFlexor" 
+kLeftKneeFlexorOrigin 0.25 0 0 
+kLeftKneeFlexorMidPoint 0.3960000000000000187 -0.02999999999999999889 0 
+kLeftKneeFlexorInsertion 0.08000000000000000167 -0.01000000000000000021 0 
+kLeftKneeFlexorPCA 0.01200000000000000025 
+kLeftKneeFlexorLength 0.23000000000000001 
+kRightKneeExtensorName "RightKneeExtensor" 
+kRightKneeExtensorOrigin 0.25 0.02900000000000000147 0 
+kRightKneeExtensorMidPoint 0.4299999999999999933 0.05999999999999999778 0 
+kRightKneeExtensorInsertion 0.07599999999999999811 0.04299999999999999656 0 
+kRightKneeExtensorPCA 0.0240000000000000005 
+kRightKneeExtensorLength 0.23000000000000001 
+kRightKneeFlexorName "RightKneeFlexor" 
+kRightKneeFlexorOrigin 0.25 0 0 
+kRightKneeFlexorMidPoint 0.3960000000000000187 -0.02999999999999999889 0 
+kRightKneeFlexorInsertion 0.08000000000000000167 -0.01000000000000000021 0 
+kRightKneeFlexorPCA 0.01200000000000000025 
+kRightKneeFlexorLength 0.23000000000000001 
+kLeftAnkleExtensorName "LeftAnkleExtensor" 
+kLeftAnkleExtensorOrigin 0.1400000000000000133 0.03300000000000000155 0 
+kLeftAnkleExtensorMidPoint 9999 9999 9999 
+kLeftAnkleExtensorInsertion 0 0.05700000000000000205 0 
+kLeftAnkleExtensorPCA 0.005000000000000000104 
+kLeftAnkleExtensorLength 0.28999999999999998 
+kLeftAnkleFlexorName "LeftAnkleFlexor" 
+kLeftAnkleFlexorOrigin 0.05700000000000000205 -0.02900000000000000147 0 
+kLeftAnkleFlexorMidPoint 9999 9999 9999 
+kLeftAnkleFlexorInsertion 0.03799999999999999906 -0.05700000000000000205 0 
+kLeftAnkleFlexorPCA 0.02599999999999999881 
+kLeftAnkleFlexorLength 0.4099999999999999756 
+kRightAnkleExtensorName "RightAnkleExtensor" 
+kRightAnkleExtensorOrigin 0.1400000000000000133 0.03300000000000000155 0 
+kRightAnkleExtensorMidPoint 9999 9999 9999 
+kRightAnkleExtensorInsertion 0 0.05700000000000000205 0 
+kRightAnkleExtensorPCA 0.005000000000000000104 
+kRightAnkleExtensorLength 0.28999999999999998 
+kRightAnkleFlexorName "RightAnkleFlexor" 
+kRightAnkleFlexorOrigin 0.05700000000000000205 -0.02900000000000000147 0 
+kRightAnkleFlexorMidPoint 9999 9999 9999 
+kRightAnkleFlexorInsertion 0.03799999999999999906 -0.05700000000000000205 0 
+kRightAnkleFlexorPCA 0.02599999999999999881 
+kRightAnkleFlexorLength 0.4099999999999999756 
+kLeftFootContactName "LeftFootContact" 
+kLeftFootNumContactPoints 4 
+kLeftFootContactPositions 0.05000000000000000278 -0.05000000000000000278 -0.04399999999999999745 0.05000000000000000278 -0.05000000000000000278 0.04399999999999999745 0.05000000000000000278 0.1499999999999999944 -0.04399999999999999745 0.05000000000000000278 0.1499999999999999944 0.04399999999999999745 
+kRightFootContactName "RightFootContact" 
+kRightFootNumContactPoints 4 
+kRightFootContactPositions 0.05000000000000000278 -0.05000000000000000278 -0.04399999999999999745 0.05000000000000000278 -0.05000000000000000278 0.04399999999999999745 0.05000000000000000278 0.1499999999999999944 -0.04399999999999999745 0.05000000000000000278 0.1499999999999999944 0.04399999999999999745 

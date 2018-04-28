@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GAITSYM SYSTEM "gaitsym.dtd">
+
+<GAITSYM>
+
+<!-- GLOBAL element contains global modelling parameters
+MuscleActivationK from van Leeuwen 1992
+MuscleForcePerUnitArea Winter - Zheng et al 1998 
+MuscleVMaxFactor Winter - animal max
+
+Note: values are primarily from the Mathematica file
+using the hip & shoulder joints as the reference points to
+define the torso segment
+
+-->
+
+<GLOBAL 
+    IntegrationStepsize="0.0002"
+    GravityVector="0.0 0.0 -9.81"
+    GroundPlanarSpringConstant="760000.0"
+    GroundNormalSpringConstant="760000.0"
+    GroundPlanarDamperConstant="4000.0"
+    GroundNormalDamperConstant="4000.0"
+    GroundStaticFrictionCoeff="1000.0"     
+    GroundKineticFrictionCoeff="800.0"  
+        
+    BMR="0" 
+    DefaultJointLimitSpringConstant="200000.0" 
+    DefaultJointLimitDamperConstant="20000.0" 
+    DefaultJointFriction="0.0"      
+    DefaultMuscleActivationK="0.17"      
+    DefaultMuscleForcePerUnitArea="400000"  
+    DefaultMuscleVMaxFactor="6"   
+    
+    TimeLimit="10"
+    EnergyLimit="50000000"
+    FitnessType="DistanceTravelled" 
+/>    
+
+<!-- Links -->
+
+<MOBILE_BASE_LINK
+    Name="Torso"
+    GraphicFile="Torso.obj"
+    Scale="2.07"
+    Mass="3705"
+    MOI="1208.250000 0.0 0.0   
+         0.0 12082.5 0.0   
+         0.0 0.0 12082.5"
+    CM="-0.550000 0.0 0.0"
+    Position="0 0.707106781 -0.707106781 0  
+              0 0 2.7"
+    Velocity="0.0  -0.5  0.0              
+              7.0  0.0  2.0"
+    VelocityRange="-50	50	-50	50	-50	50"
+    PositionRange="-1	1000	-1	1	0	10"        
+/>
+
+<REVOLUTE_LINK
+    Name="RightThigh"
+    GraphicFile="RightThigh.obj"
+    Scale="1.11"
+    Mass="549"
+    MOI="22.640000 0.0 0.0   
+         0.0 226.4 0.0   
+         0.0 0.0 226.4"
+    CM="0.47 0.0 0.0"
+    MDHA="0.0"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="1.47"
+    InitialJointVelocity="0.0"
+    JointMin="1.47"
+    JointMax="2.37"
+/>
+
+<REVOLUTE_LINK
+    Name="RightLeg"
+    GraphicFile="RightLeg.obj"
+    Scale="1.21"
+    Mass="268"
+    MOI="12.690000 0.0 0.0   
+         0.0 126.9 0.0   
+         0.0 0.0 126.9"
+    CM="0.60 0.0 0.0"
+    MDHA="1.11"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="-1.007"
+    InitialJointVelocity="0.0"
+    JointMin="-2.04"
+    JointMax="-1.007"
+/>
+
+<REVOLUTE_LINK
+    Name="RightFoot"
+    GraphicFile="RightFoot.obj"
+    Scale="1.18"
+    Mass="180"
+    MOI="9.970000 0.0 0.0   
+         0.0 99.7 0.0   
+         0.0 0.0 99.7"
+    CM="0.65 0.0 0.0"
+    MDHA="1.21"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="0.686"
+    InitialJointVelocity="0.0"
+    JointMin="0.686"
+    JointMax="2.19"
+/>
+
+<REVOLUTE_LINK
+    Name="LeftThigh"
+    GraphicFile="LeftThigh.obj"
+    Scale="1.11"
+    Mass="549"
+    MOI="22.640000 0.0 0.0   
+         0.0 226.4 0.0   
+         0.0 0.0 226.4"
+    CM="0.47 0.0 0.0"
+    MDHA="0.0"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="1.47"
+    InitialJointVelocity="0.0"
+    JointMin="1.47"
+    JointMax="2.37"
+/>
+
+<REVOLUTE_LINK
+    Name="LeftLeg"
+    GraphicFile="LeftLeg.obj"
+    Scale="1.21"
+    Mass="268"
+    MOI="12.690000 0.0 0.0   
+         0.0 126.9 0.0   
+         0.0 0.0 126.9"
+    CM="0.60 0.0 0.0"
+    MDHA="1.11"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="-1.007"
+    InitialJointVelocity="0.0"
+    JointMin="-2.04"
+    JointMax="-1.007"
+/>
+
+<REVOLUTE_LINK
+    Name="LeftFoot"
+    GraphicFile="LeftFoot.obj"
+    Scale="1.18"
+    Mass="180"
+    MOI="9.970000 0.0 0.0   
+         0.0 99.7 0.0   
+         0.0 0.0 99.7"
+    CM="0.65 0.0 0.0"
+    MDHA="1.21"
+    MDHAlpha="0.0"
+    MDHD="0.0"
+    MDHTheta="0.686"
+    InitialJointVelocity="0.0"
+    JointMin="0.686"
+    JointMax="2.19"
+/>
+
+<!--
+Robot
+-->
+
+<ROBOT
+    Name="GaitRobot"
+    RootLink="Torso"
+    LinkPairs=
+    "RightThigh Torso
+    RightLeg RightThigh
+    RightFoot RightLeg
+    LeftThigh Torso
+    LeftLeg LeftThigh
+    LeftFoot LeftLeg"
+/>
+
+<!--
+Muscles
+-->
+
+<MUSCLE
+    Name="RightHipExtensor"
+    OriginLinkName="Torso"
+    Origin="0.73 -0.10 0.0"
+    InsertionLinkName="RightThigh"
+    Insertion="0.39 -0.09 0.0"
+    PCA="1.33"
+    Length="0.27"
+/>
+
+<MUSCLE
+    Name="RightHipFlexor"
+    OriginLinkName="Torso"
+    Origin="-0.43 -0.63 0.0"
+    InsertionLinkName="RightThigh"
+    Insertion="0.14 0.20 0.0"
+    PCA="0.74"
+    Length="0.21"
+/>
+
+<MUSCLE
+    Name="RightKneeExtensor"
+    OriginLinkName="RightThigh"
+    Origin="0.45 0.16 0.0"
+    Radius="0.18"
+    InsertionLinkName="RightLeg"
+    Insertion="0.09 0.20 0.0"
+    PCA="2.08"
+    Length="0.17"
+/>
+
+<MUSCLE
+    Name="RightKneeFlexor"
+    OriginLinkName="RightThigh"
+    Origin="0.64 -0.02 0.0"
+    InsertionLinkName="RightLeg"
+    Insertion="0.21 -0.17 0.0"
+    PCA="0.59"
+    Length="0.26"
+/>
+
+<!--dorsiflexion-->
+<MUSCLE
+    Name="RightAnkleExtensor"
+    OriginLinkName="RightLeg"
+    Origin="0.42 0.08 0.0"
+    InsertionLinkName="RightFoot"
+    Insertion="0.15 0.03 0.0"
+    PCA="0.36"
+    Length="0.21"
+/>
+
+<!--plantarflexion-->
+<MUSCLE
+    Name="RightAnkleFlexor"
+    OriginLinkName="RightLeg"
+    Origin="0.15 -0.14 0.0"
+    Radius="-0.18"
+    InsertionLinkName="RightFoot"
+    Insertion="0.04 -0.18 0.0"
+    PCA="0.71"
+    Length="0.25"
+/>
+
+<MUSCLE
+    Name="LeftHipExtensor"
+    OriginLinkName="Torso"
+    Origin="0.73 -0.10 0.0"
+    InsertionLinkName="LeftThigh"
+    Insertion="0.39 -0.09 0.0"
+    PCA="1.33"
+    Length="0.27"
+/>
+
+<MUSCLE
+    Name="LeftHipFlexor"
+    OriginLinkName="Torso"
+    Origin="-0.43 -0.63 0.0"
+    InsertionLinkName="LeftThigh"
+    Insertion="0.14 0.20 0.0"
+    PCA="0.74"
+    Length="0.21"
+/>
+
+<MUSCLE
+    Name="LeftKneeExtensor"
+    OriginLinkName="LeftThigh"
+    Origin="0.45 0.16 0.0"
+    Radius="0.18"
+    InsertionLinkName="LeftLeg"
+    Insertion="0.09 0.20 0.0"
+    PCA="2.08"
+    Length="0.17"
+/>
+
+<MUSCLE
+    Name="LeftKneeFlexor"
+    OriginLinkName="LeftThigh"
+    Origin="0.64 -0.02 0.0"
+    InsertionLinkName="LeftLeg"
+    Insertion="0.21 -0.17 0.0"
+    PCA="0.59"
+    Length="0.26"
+/>
+
+<!--dorsiflexion-->
+<MUSCLE
+    Name="LeftAnkleExtensor"
+    OriginLinkName="LeftLeg"
+    Origin="0.42 0.08 0.0"
+    InsertionLinkName="LeftFoot"
+    Insertion="0.15 0.03 0.0"
+    PCA="0.36"
+    Length="0.21"
+/>
+
+<!--plantarflexion-->
+<MUSCLE
+    Name="LeftAnkleFlexor"
+    OriginLinkName="LeftLeg"
+    Origin="0.15 -0.14 0.0"
+    Radius="-0.18"
+    InsertionLinkName="LeftFoot"
+    Insertion="0.04 -0.18 0.0"
+    PCA="0.71"
+    Length="0.25"
+/>
+
+<!--
+Contact Models
+-->
+
+<CONTACT
+    Name="RightFootContact"
+    LinkName="RightFoot"
+    ContactPositions="1.18 0 0"
+/>
+
+<CONTACT
+    Name="LeftFootContact"
+    LinkName="LeftFoot"
+    ContactPositions="1.18 0 0"
+/>
+
+<!--
+Drivers
+-->
+
+<!-- duration value pairs -->
+<CYCLIC_DRIVER
+    Name="RightHipExtensorDriver"
+    Target="RightHipExtensor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 1.0
+    0.2 1.0
+    0.15 0.0
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="RightHipFlexorDriver"
+    Target="RightHipFlexor"
+    DurationValuePairs=
+    "0.15 0.5
+    0.2 0.0
+    0.2 0.0
+    0.15 0.85
+    0.2 0.85
+    0.2 0.85"
+/>
+
+<CYCLIC_DRIVER
+    Name="RightKneeExtensorDriver"
+    Target="RightKneeExtensor"
+    DurationValuePairs=
+    "0.15 1.0
+    0.2 1.0
+    0.2 1.0
+    0.15 0.0
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="RightKneeFlexorDriver"
+    Target="RightKneeFlexor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 0.0
+    0.2 0.0
+    0.15 0.85
+    0.2 0.85
+    0.2 0.85"
+/>
+
+<CYCLIC_DRIVER
+    Name="RightAnkleExtensorDriver"
+    Target="RightAnkleExtensor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 0.0
+    0.2 0.0
+    0.15 0.85
+    0.2 0.85
+    0.2 0.85"
+/>
+
+<CYCLIC_DRIVER
+    Name="RightAnkleFlexorDriver"
+    Target="RightAnkleFlexor"
+    DurationValuePairs=
+    "0.15 1.0
+    0.2 1.0
+    0.2 1.0
+    0.15 0.0
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<!-- duration value pairs -->
+<CYCLIC_DRIVER
+    Name="LeftHipExtensorDriver"
+    Target="LeftHipExtensor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 0.0
+    0.2 0.0
+    0.15 0.0
+    0.2 1.0
+    0.2 1.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="LeftHipFlexorDriver"
+    Target="LeftHipFlexor"
+    DurationValuePairs=
+    "0.15 0.85
+    0.2 0.85
+    0.2 0.85
+    0.15 0.5
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="LeftKneeExtensorDriver"
+    Target="LeftKneeExtensor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 0.0
+    0.2 0.0
+    0.15 1.0
+    0.2 1.0
+    0.2 1.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="LeftKneeFlexorDriver"
+    Target="LeftKneeFlexor"
+    DurationValuePairs=
+    "0.15 0.85
+    0.2 0.85
+    0.2 0.85
+    0.15 0.0
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="LeftAnkleExtensorDriver"
+    Target="LeftAnkleExtensor"
+    DurationValuePairs=
+    "0.15 0.85
+    0.2 0.85
+    0.2 0.85
+    0.15 0.0
+    0.2 0.0
+    0.2 0.0"
+/>
+
+<CYCLIC_DRIVER
+    Name="LeftAnkleFlexorDriver"
+    Target="LeftAnkleFlexor"
+    DurationValuePairs=
+    "0.15 0.0
+    0.2 0.0
+    0.2 0.0
+    0.15 1.0
+    0.2 1.0
+    0.2 1.0"
+/>
+
+
+</GAITSYM>

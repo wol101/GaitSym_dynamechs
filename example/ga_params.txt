@@ -1,0 +1,32 @@
+logNotes
+"Standard run configuration"
+genomeLength	21
+populationSize	49
+parentsToKeep	20
+immigrations	0
+maxGenerations	1000
+lowBound	-1
+highBound	1
+gaussianMutationChance	0.15
+frameShiftMutationChance	0
+duplicationMutationChance	0
+crossoverChance	0.01
+defaultGaussianSD	0.1
+saveBestEvery	1
+savePopEvery	100
+hillClimbEvery	0
+parallelObjectives	1
+improvementGenerations	100
+improvementThreshold	0.1
+removeDuplicates	1
+multipleGaussian	1
+normalStats	0
+fitnessTimeLimit	1200
+fitnessRestartOnError	1
+startingPopulation	"/Users/wis/Unix/cvs/GaitSym/example/Run_2003-10-15_17.59.57/Population_0000099.txt"
+genealogyFile	"genealogy.txt"
+extraDataFile	"/Users/wis/Unix/cvs/GaitSym/example/Run_2003-10-15_17.59.57/config_file.xml"
+objectiveCommand "/Users/wis/Unix/cvs/GaitSym/bin/objective"
+parentSelection	RouletteWheelSelection
+crossoverType	Average
+genomeType	DefaultGenome

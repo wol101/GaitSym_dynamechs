@@ -1,0 +1,148 @@
+<schema
+  xmlns='http://www.w3.org/2000/10/XMLSchema'
+  targetNamespace='http://www.w3.org/namespace/'
+  xmlns:t='http://www.w3.org/namespace/'>
+
+ <element name='GAITSYM'>
+  <complexType>
+   <sequence>
+    <element ref='t:GLOBAL'/>
+    <element ref='t:MOBILE_BASE_LINK'/>
+    <element ref='t:REVOLUTE_LINK' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:ROBOT'/>
+    <element ref='t:MUSCLE' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:CONTACT' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:CYCLIC_DRIVER' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='GLOBAL'>
+  <complexType>
+   <attribute name='IntegrationStepsize' type='NMTOKEN' use='required'/>
+   <attribute name='GravityVector' type='NMTOKENS' use='required'/>
+   <attribute name='GroundPlanarSpringConstant' type='NMTOKEN' use='required'/>
+   <attribute name='GroundNormalSpringConstant' type='NMTOKEN' use='required'/>
+   <attribute name='GroundPlanarDamperConstant' type='NMTOKEN' use='required'/>
+   <attribute name='GroundNormalDamperConstant' type='NMTOKEN' use='required'/>
+   <attribute name='GroundStaticFrictionCoeff' type='NMTOKEN' use='required'/>
+   <attribute name='GroundKineticFrictionCoeff' type='NMTOKEN' use='required'/>
+   <attribute name='BMR' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultJointLimitSpringConstant' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultJointLimitDamperConstant' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultJointFriction' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultMuscleActivationK' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultMuscleForcePerUnitArea' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultMuscleVMaxFactor' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultMuscleWidth' type='NMTOKEN' use='required'/>
+   <attribute name='DefaultMuscleFastTwitchProportion' type='string' use='default' value='DefaultMuscleDensity'/>
+   <attribute name='#REQUIRED' type='string' use='required'/>
+   <attribute name='DefaultMuscleAllowReverseWork' type='string' use='default' value='TimeLimit'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='MetabolicEnergyLimit'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='MechanicalEnergyLimit'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='FitnessType'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='OutputModelStateFilename'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='OutputModelStateAtTime'/>
+   <attribute name='NMTOKEN' type='string' use='default' value='OutputKinematicsFile'/>
+   <attribute name='NMTOKEN' type='string' use='default' value=''/>
+  </complexType>
+ </element>
+
+ <element name='MOBILE_BASE_LINK'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='GraphicFile' type='string' use='required'/>
+   <attribute name='Scale' type='NMTOKEN' use='required'/>
+   <attribute name='Mass' type='NMTOKEN' use='required'/>
+   <attribute name='MOI' type='NMTOKENS' use='required'/>
+   <attribute name='CM' type='NMTOKENS' use='required'/>
+   <attribute name='Position' type='NMTOKENS' use='required'/>
+   <attribute name='Velocity' type='NMTOKENS' use='required'/>
+   <attribute name='VelocityRange' type='NMTOKENS' use='required'/>
+   <attribute name='PositionRange' type='NMTOKENS' use='required'/>
+   <attribute name='Restriction' type='NMTOKEN' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='REVOLUTE_LINK'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='GraphicFile' type='string' use='required'/>
+   <attribute name='Scale' type='NMTOKEN' use='required'/>
+   <attribute name='Mass' type='NMTOKEN' use='required'/>
+   <attribute name='MOI' type='NMTOKENS' use='required'/>
+   <attribute name='CM' type='NMTOKENS' use='required'/>
+   <attribute name='MDHA' type='NMTOKEN' use='required'/>
+   <attribute name='MDHAlpha' type='NMTOKEN' use='required'/>
+   <attribute name='MDHD' type='NMTOKEN' use='required'/>
+   <attribute name='MDHTheta' type='NMTOKEN' use='required'/>
+   <attribute name='InitialJointVelocity' type='NMTOKEN' use='required'/>
+   <attribute name='JointMin' type='NMTOKEN' use='required'/>
+   <attribute name='JointMax' type='NMTOKEN' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='ROBOT'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='RootLink' type='IDREF' use='required'/>
+   <attribute name='LinkPairs' type='IDREFS' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='MUSCLE'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='Type' type='NMTOKEN' use='required'/>
+   <attribute name='OriginLinkName' type='IDREF' use='required'/>
+   <attribute name='Origin' type='NMTOKENS' use='required'/>
+   <attribute name='InsertionLinkName' type='IDREF' use='required'/>
+   <attribute name='Insertion' type='NMTOKENS' use='required'/>
+   <attribute name='MidPointLinkName' type='IDREF' use='optional'/>
+   <attribute name='MidPoint' type='NMTOKENS' use='optional'/>
+   <attribute name='Radius' type='NMTOKEN' use='optional'/>
+   <attribute name='PCA' type='NMTOKEN' use='required'/>
+   <attribute name='FibreLength' type='NMTOKEN' use='required'/>
+   <attribute name='TendonLength' type='NMTOKEN' use='required'/>
+   <attribute name='ParallelStrainModel' type='NMTOKEN' use='required'/>
+   <attribute name='ParallelStrainAtFmax' type='NMTOKEN' use='required'/>
+   <attribute name='SerialStrainModel' type='NMTOKEN' use='required'/>
+   <attribute name='SerialStrainAtFmax' type='NMTOKEN' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='CONTACT'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='LinkName' type='IDREF' use='required'/>
+   <attribute name='ContactPositions' type='NMTOKENS' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='CYCLIC_DRIVER'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='Target' type='IDREF' use='required'/>
+   <attribute name='PhaseDelay' type='NMTOKEN' use='optional'/>
+   <attribute name='DurationValuePairs' type='NMTOKENS' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='STEP_DRIVER'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='Target' type='IDREF' use='required'/>
+   <attribute name='DurationValuePairs' type='NMTOKENS' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='DATA_TARGET'>
+  <complexType>
+   <attribute name='Name' type='ID' use='required'/>
+   <attribute name='Target' type='IDREF' use='required'/>
+   <attribute name='DataType' type='NMTOKEN' use='required'/>
+   <attribute name='Weight' type='NMTOKEN' use='optional'/>
+   <attribute name='DurationValuePairs' type='NMTOKENS' use='required'/>
+  </complexType>
+ </element>
+</schema>

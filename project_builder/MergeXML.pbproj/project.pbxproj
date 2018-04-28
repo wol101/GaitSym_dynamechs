@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		F5092B0505906FF2017DA91F = {
+			children = (
+				F5092B090590703D017DA91F,
+				F5092B1605907394017DA91F,
+				F5092B1705907394017DA91F,
+			);
+			isa = PBXGroup;
+			name = merge;
+			path = /Users/wis/Unix/cvs/GaitSym/merge;
+			refType = 0;
+		};
+		F5092B090590703D017DA91F = {
+			isa = PBXFileReference;
+			path = MergeXML.cc;
+			refType = 4;
+		};
+		F5092B0A0590703D017DA91F = {
+			fileRef = F5092B090590703D017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5092B1605907394017DA91F = {
+			isa = PBXFileReference;
+			path = SimulationContainer.h;
+			refType = 4;
+		};
+		F5092B1705907394017DA91F = {
+			isa = PBXFileReference;
+			path = SimulationContainer.cc;
+			refType = 4;
+		};
+		F5092B1805907394017DA91F = {
+			fileRef = F5092B1605907394017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5092B1905907394017DA91F = {
+			fileRef = F5092B1705907394017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F525AB8603D98A5D01A80001 = {
+			buildActionMask = 2147483647;
+			files = (
+				F5092B1805907394017DA91F,
+				F527111305909071017DA91F,
+				F52711150590908C017DA91F,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F525AB8703D98A5D01A80001 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F525AB8803D98A5D01A80001 = {
+			buildActionMask = 2147483647;
+			files = (
+				F5092B0A0590703D017DA91F,
+				F5092B1905907394017DA91F,
+				F527111205909071017DA91F,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F525AB8903D98A5D01A80001 = {
+			buildActionMask = 2147483647;
+			files = (
+				F5E82AC00585F3BF017DA91F,
+				F5FB7A1405876B54017DA91F,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F525AB8A03D98A5D01A80001 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F525AB8B03D98A5D01A80001 = {
+			buildPhases = (
+				F525AB8603D98A5D01A80001,
+				F525AB8703D98A5D01A80001,
+				F525AB8803D98A5D01A80001,
+				F525AB8903D98A5D01A80001,
+				F525AB8A03D98A5D01A80001,
+			);
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../dynamechs_4.0pre1/dm /usr/local/include/libxml2 \"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Libraries/CIncludes\"";
+				LIBRARY_SEARCH_PATHS = "";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_LDFLAGS = "-lobjc -lm";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Merge;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXApplicationTarget;
+			name = Merge;
+			productName = "Empirical Walker Client";
+			productReference = F525AB8C03D98A5D01A80001;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Merge</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+</dict>
+</plist>
+";
+			shouldUseHeadermap = 0;
+		};
+		F525AB8C03D98A5D01A80001 = {
+			isa = PBXApplicationReference;
+			path = Merge.app;
+			refType = 3;
+		};
+		F525AB8D03D98A5D01A80001 = {
+			children = (
+				F525AB8C03D98A5D01A80001,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+		F525ABB003D991FD01A80001 = {
+			children = (
+				F5E82ABF0585F3BF017DA91F,
+				F570BF2D049CD5EC01A80001,
+			);
+			isa = PBXGroup;
+			name = lib;
+			refType = 4;
+		};
+		F527110F0590905B017DA91F = {
+			children = (
+				F527111005909071017DA91F,
+				F527111105909071017DA91F,
+				F52711140590908C017DA91F,
+			);
+			isa = PBXGroup;
+			name = src;
+			refType = 4;
+		};
+		F527111005909071017DA91F = {
+			isa = PBXFileReference;
+			name = DataFile.cc;
+			path = /Users/wis/Unix/cvs/GaitSym/src/DataFile.cc;
+			refType = 0;
+		};
+		F527111105909071017DA91F = {
+			isa = PBXFileReference;
+			name = DataFile.h;
+			path = /Users/wis/Unix/cvs/GaitSym/src/DataFile.h;
+			refType = 0;
+		};
+		F527111205909071017DA91F = {
+			fileRef = F527111005909071017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F527111305909071017DA91F = {
+			fileRef = F527111105909071017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F52711140590908C017DA91F = {
+			isa = PBXFileReference;
+			name = Util.h;
+			path = /Users/wis/Unix/cvs/GaitSym/src/Util.h;
+			refType = 0;
+		};
+		F52711150590908C017DA91F = {
+			fileRef = F52711140590908C017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F570BF2D049CD5EC01A80001 = {
+			isa = PBXFileReference;
+			name = libMallocDebug.a;
+			path = /usr/lib/libMallocDebug.a;
+			refType = 0;
+		};
+		F58676D703D840B701A80001 = {
+			isa = PBXFileReference;
+			name = makefile;
+			path = ../makefile;
+			refType = 2;
+		};
+		F5C188F103D7564C01A80001 = {
+			children = (
+				F5092B0505906FF2017DA91F,
+				F58676D703D840B701A80001,
+				F527110F0590905B017DA91F,
+				F525ABB003D991FD01A80001,
+				F525AB8D03D98A5D01A80001,
+			);
+			isa = PBXGroup;
+			refType = 4;
+		};
+		F5C188F303D7564C01A80001 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		F5C188F403D7564C01A80001 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		F5C188F503D7564C01A80001 = {
+			buildStyles = (
+				F5C188F303D7564C01A80001,
+				F5C188F403D7564C01A80001,
+			);
+			isa = PBXProject;
+			mainGroup = F5C188F103D7564C01A80001;
+			productRefGroup = F525AB8D03D98A5D01A80001;
+			projectDirPath = "";
+			targets = (
+				F525AB8B03D98A5D01A80001,
+			);
+		};
+		F5E82ABF0585F3BF017DA91F = {
+			isa = PBXFileReference;
+			name = libxml2.a;
+			path = /usr/local/lib/libxml2.a;
+			refType = 0;
+		};
+		F5E82AC00585F3BF017DA91F = {
+			fileRef = F5E82ABF0585F3BF017DA91F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F5FB7A1405876B54017DA91F = {
+			fileRef = F570BF2D049CD5EC01A80001;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = F5C188F503D7564C01A80001;
+}
